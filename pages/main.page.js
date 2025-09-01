@@ -3,7 +3,7 @@ class Main {
     get buildNumberDropdown() { return $('#selectBuild'); }
 
     get firstNumberField() { return $('#number1Field'); }
-    
+
     get secondNumberField() { return $('#number2Field'); }
 
     get operationDropdown() { return $('#selectOperationDropdown'); }
@@ -18,49 +18,49 @@ class Main {
 
     get errorMessage() { return $('#errorMsgField'); }
 
-    open() {
-        browser.url('/BasicCalculator.html');
+    async open() {
+        await browser.url('/BasicCalculator.html');
         return this;
     }
 
-    chooseBuild(value) {
-        this.buildNumberDropdown.waitForDisplayed();
-        this.buildNumberDropdown.selectByVisibleText(value);
+    async chooseBuild(value) {
+        await this.buildNumberDropdown.waitForDisplayed();
+        await this.buildNumberDropdown.selectByVisibleText(value);
         return this;
     }
 
-    setFirstNumber(number) {
-        this.firstNumberField.waitForDisplayed();
-        this.firstNumberField.setValue(number);
+    async setFirstNumber(number) {
+        await this.firstNumberField.waitForDisplayed();
+        await this.firstNumberField.setValue(number);
         return this;
     }
 
-    setSecondNumber(number) {
-        this.secondNumberField.waitForDisplayed();
-        this.secondNumberField.setValue(number);
+    async setSecondNumber(number) {
+        await this.secondNumberField.waitForDisplayed();
+        await this.secondNumberField.setValue(number);
         return this;
     }
 
-    chooseOperation(operation) {
-        this.operationDropdown.waitForDisplayed();
-        this.operationDropdown.selectByVisibleText(operation);
+    async chooseOperation(operation) {
+        await this.operationDropdown.waitForDisplayed();
+        await this.operationDropdown.selectByVisibleText(operation);
         return this;
     }
 
-    clickCalculateButton() {
-        this.calculateButton.waitForDisplayed();
-        this.calculateButton.click();
+    async clickCalculateButton() {
+        await this.calculateButton.waitForDisplayed();
+        await this.calculateButton.click();
         return this;
     }
 
-    getAnswer() {
-        this.answerField.waitForDisplayed();
-        return this.answerField.getAttribute('value');
+    async getAnswer() {
+        await this.answerField.waitForDisplayed();
+        return await this.answerField.getValue();
     }
 
-    getErrorMessageText() {
-        this.errorMessage.waitForDisplayed();
-        return this.errorMessage.getText();
+    async getErrorMessageText() {
+        await this.errorMessage.waitForDisplayed();
+        return await this.errorMessage.getText();
     }
 }
 

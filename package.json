@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/@wdio/cli/bin/wdio.js"
+    "test": "node ./node_modules/@wdio/cli/bin/wdio.js",
+    "wdio": "wdio run ./wdio.conf.js"
   },
   "repository": {
     "type": "git",
@@ -17,20 +18,14 @@
   },
   "homepage": "https://github.com/KazadaevIvan/js_sample#readme",
   "devDependencies": {
-    "@wdio/allure-reporter": "^7.2.1",
-    "@wdio/junit-reporter": "^7.2.1",
-    "@wdio/local-runner": "^7.2.2",
-    "@wdio/mocha-framework": "^7.2.1",
-    "@wdio/spec-reporter": "^7.2.1",
-    "@wdio/sync": "^7.2.2",
-    "chai": "^4.3.4",
-    "chai-webdriverio": "^1.0.0",
-    "chromedriver": "^89.0.0",
-    "local-runner": "^0.1.1-alpha",
-    "wdio-chromedriver-service": "^7.0.0",
-    "webdriverio": "^7.2.2"
-  },
-  "dependencies": {
-    "@wdio/cli": "^7.2.2"
+    "@wdio/allure-reporter": "^9.19.2",
+    "@wdio/cli": "^9.19.2",
+    "@wdio/junit-reporter": "^9.19.2",
+    "@wdio/local-runner": "^9.19.2",
+    "@wdio/mocha-framework": "^9.19.2",
+    "@wdio/spec-reporter": "^9.19.2",
+    "chai": "^4.5.0",
+    "chromedriver": "^114.0.0",
+    "webdriverio": "^9.19.2"
   }
 }
